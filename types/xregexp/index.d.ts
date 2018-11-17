@@ -3,6 +3,7 @@
 // Definitions by: Bart van der Schoor <https://github.com/Bartvds>,
 //                 Johannes Fahrenkrug <https://github.com/jfahrenkrug>
 //                 Mateusz Jagiełło <https://github.com/sigo>
+//                 Andrew Bradley <https://github.com/cspotcode>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 
@@ -49,7 +50,7 @@ declare namespace OuterXRegExp {
     // begin API definitions
     function addToken(regex: RegExp, handler: (matchArr: RegExpExecArray, scope: string) => string, options?: TokenOpts): void;
 
-    function build(pattern: string, subs: string[], flags?: string): RegExp;
+    function build(pattern: string, subs: Record<string, string | RegExp>, flags?: string): RegExp;
     function cache(pattern: string, flags?: string): RegExp;
     function escape(str: string): string;
     function exec(str: string, regex: RegExp, pos?: number, sticky?: boolean): RegExpExecArray;
@@ -92,7 +93,7 @@ declare namespace OuterXRegExp {
         // begin API definitions
         function addToken(regex: RegExp, handler: (matchArr: RegExpExecArray, scope: string) => string, options?: TokenOpts): void;
 
-        function build(pattern: string, subs: string[], flags?: string): RegExp;
+        function build(pattern: string, subs: Record<string, string | RegExp>, flags?: string): RegExp;
         function cache(pattern: string, flags?: string): RegExp;
         function escape(str: string): string;
         function exec(str: string, regex: RegExp, pos?: number, sticky?: boolean): RegExpExecArray;
